@@ -5,24 +5,24 @@ import { FormattedMessage } from 'react-intl'
 import Layout from '../components/Layout'
 import LocalizedLink from '../components/LocalizedLink'
 
-const IndexPage = ({ pageContext: { locale } }) => (
+const SecondPage = ({ pageContext: { locale } }) => (
   <Layout locale={locale}>
     <h1>
-      <FormattedMessage id="hi" />
+      <FormattedMessage id="about" />
     </h1>
     <p>
-      <FormattedMessage id="welcome" />
+      <FormattedMessage id="aboutCopy" />
     </p>
-    <LocalizedLink to="/about/">
-      <FormattedMessage id="about" />
+    <LocalizedLink to="/">
+      <FormattedMessage id="backToHomepage" />
     </LocalizedLink>
   </Layout>
 )
 
-IndexPage.propTypes = {
+SecondPage.propTypes = {
   pageContext: PropTypes.shape({
     locale: PropTypes.string.isRequired
   }).isRequired
 }
 
-export default IndexPage
+export default SecondPage

@@ -1,0 +1,32 @@
+.header {
+  background-color: #5050ff;
+  padding: 24px;
+}
+
+.header a {
+  color: white;
+  text-decoration: underline;
+}
+
+.header a.active {
+  text-decoration: none;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.header a:hover {
+  opacity: 0.8;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.language a {
+  margin-left: 16px;
+}
