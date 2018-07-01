@@ -9,6 +9,7 @@
     "eslint": "^5.0.1",
     "gatsby": "next",
     "gatsby-plugin-react-helmet": "next",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0"
