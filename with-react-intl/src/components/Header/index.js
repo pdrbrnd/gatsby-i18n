@@ -8,7 +8,7 @@ import locales from '../../constants/locales'
 
 import styles from './style.module.css'
 
-const Header = ({ intl: { locale }, ...props }) => (
+const Header = ({ intl: { locale } }) => (
   <div className={styles.header}>
     <div className={styles.inner}>
       <h1 style={{ margin: 0 }}>
