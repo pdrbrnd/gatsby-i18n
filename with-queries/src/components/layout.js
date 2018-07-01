@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
+import locales from '../constants/locales'
+
 const {
   Provider: LocaleProvider,
   Consumer: LocaleConsumer
@@ -10,12 +12,15 @@ const {
 const Layout = ({ children, path, locale }) => (
   <LocaleProvider value={locale}>
     <ul>
-      <li>
-        <Link to={path}>English</Link>
-      </li>
-      <li>
-        <Link to={`/pt${path}`}>Portuguese</Link>
-      </li>
+      {Object.keys(locales).map(key => (
+        <li key={locales[key].locale}>
+          <Link
+            to={locales[key].default ? path : `/${locales[key].path}${path}`}
+          >
+            {locales[key].locale}
+          </Link>
+        </li>
+      ))}
     </ul>
     <div>{children}</div>
   </LocaleProvider>
