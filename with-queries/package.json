@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@significa/eslint-config-significa": "^0.2.0",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^5.0.1",
     "gatsby": "next",
     "gatsby-plugin-react-helmet": "next",
     "react": "^16.4.1",
