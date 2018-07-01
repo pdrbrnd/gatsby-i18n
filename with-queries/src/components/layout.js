@@ -1,49 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from "gatsby"
+import { Link } from 'gatsby'
 
-import Header from './header'
-import './layout.css'
+const {
+  Provider: LocaleProvider,
+  Consumer: LocaleConsumer
+} = React.createContext()
 
-const Layout = ({ children, data }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
+const Layout = ({ children, path, locale }) => (
+  <LocaleProvider value={locale}>
+    <ul>
+      <li>
+        <Link to={path}>English</Link>
+      </li>
+      <li>
+        <Link to={`/pt${path}`}>Portuguese</Link>
+      </li>
+    </ul>
+    <div>{children}</div>
+  </LocaleProvider>
 )
 
+export { LocaleConsumer }
+
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
+  ]).isRequired,
+  path: PropTypes.string,
+  locale: PropTypes.string.isRequired
+}
+
+Layout.defaultProps = {
+  path: '/'
 }
 
 export default Layout

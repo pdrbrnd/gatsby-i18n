@@ -1,0 +1,10 @@
+{
+  "title": "About this site",
+  "text":
+    "Here you will find more information about this site. We are using graphql to query this content in each language.",
+  "image": {
+    "source": "./cat.jpg",
+    "alt": "Picture of a cat"
+  },
+  "back": "Back to homepage"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Sobre este site",
+  "text":
+    "Aqui vais encontrar mais informação sobre este site. Estamos a usar graphql para is buscar este conteúdo em cada linguagem",
+  "image": {
+    "source": "./quim.jpg",
+    "alt": "Fotografia do quim"
+  },
+  "back": "Voltar à página inicial"
+}
